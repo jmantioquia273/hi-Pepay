@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bouquet of Roses</title>
+	<title>HI!!</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 		* {
@@ -13,6 +13,7 @@
 		body {
 			font-family: Arial, sans-serif;
 			background-color: #f7f7f7;
+			text-align: center;
 		}
 		
 		.container {
@@ -20,58 +21,59 @@
 			margin: 0 auto;
 			padding: 20px;
 			background-color: #fff;
-		}
-		
-		.row::after {
-			content: "";
-			clear: both;
-			display: table;
-		}
-		
-		.column {
-			float: left;
-			width: 50%;
-			padding: 10px;
-		}
-		
-		.column img {
-			width: 100%;
-			height: auto;
-			display: block;
-			margin: 0 auto;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 		}
 		
 		h1 {
-			text-align: center;
-			margin-bottom: 20px;
 			color: #555;
+			margin-bottom: 20px;
 		}
 		
 		p {
-			text-align: justify;
-			margin-bottom: 20px;
 			color: #555;
+			font-size: 18px;
+			margin-bottom: 20px;
+			line-height: 1.5;
+			text-align: justify;
+		}
+		
+		button {
+			background-color: #ff69b4;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			padding: 10px 20px;
+			font-size: 20px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			margin-top: 20px;
+		}
+		
+		button:hover {
+			background-color: #ff5e9e;
 		}
 		
 		@media screen and (max-width: 768px) {
-			.column {
-				width: 100%;
+			.container {
+				padding: 10px;
+			}
+			
+			p {
+				font-size: 16px;
+			}
+			
+			button {
+				font-size: 16px;
 			}
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<h1>Bouquet of Roses</h1>
-		<div class="row">
-			<div class="column">
-				<img src="https://www.flowershopnetwork.com/blog/wp-content/uploads/2011/09/red-roses.jpg" alt="Bouquet of Red Roses">
-			</div>
-			<div class="column">
-				<p>A beautiful bouquet of red roses to express your love and affection. Perfect for Valentine's Day, birthdays, or any special occasion.</p>
-				<p>Our roses are carefully selected and arranged by our expert florists to ensure maximum freshness and beauty. Order now and surprise your loved one with this stunning bouquet.</p>
-			</div>
-		</div>
+		<h1>Hi! Pepay</h1>
+		<p>Hey there, I just wanted to let you know that I think you're amazing. I love your smile, your laugh, and your kind heart. You always brighten up my day, and I feel lucky to have you in my life.</p>
+		<button>Let's grab coffee sometime?</button>
 	</div>
 </body>
 </html>

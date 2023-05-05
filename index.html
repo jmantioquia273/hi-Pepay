@@ -1,73 +1,102 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Moving Flowers Animation</title>
-    <style>
-      /* Style for the flower image */
-      .flower {
-        position: relative;
-        width: 100%;
-        max-width: 200px;
-      }
+<head>
+	<title>HI</title>
+	<style>
+		body {
+			background-color: #d0e4fe;
+		}
 
-      /* Style for the name text */
-      .flower-name {
-        position: absolute;
-        font-size: 1.5em;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+		.flower {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			margin: 100px auto;
+		}
 
-      /* Media query for small screens */
-      @media only screen and (max-width: 600px) {
-        .flower {
-          width: 80%;
-          max-width: none;
-        }
-        .flower-name {
-          font-size: 1em;
-        }
-      }
-    </style>
-    <script>
-      // Function to move the flower animation
-      function moveFlower() {
-        // Get the flower image element
-        var flower = document.getElementById("flower");
+		.petal {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			margin-left: -25px;
+			border-radius: 50%;
+			transform: rotate(0deg);
+			animation-name: petal-anim;
+			animation-duration: 4s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+			background-color: #ffccff; /* pink */
+			box-shadow: 2px 2px 5px #666666;
+		}
 
-        // Set the initial position of the flower
-        var x = 0;
-        var y = 0;
+		.petal:nth-child(1) {
+			transform-origin: top;
+		}
 
-        // Move the flower across the screen
-        setInterval(function() {
-          // Update the position of the flower
-          x += 5;
-          y += 2;
+		.petal:nth-child(2) {
+			transform-origin: right;
+		}
 
-          // Set the new position of the flower
-          flower.style.left = x + "px";
-          flower.style.top = y + "px";
-        }, 50);
-      }
+		.petal:nth-child(3) {
+			transform-origin: bottom;
+		}
 
-      // Function to add the name "Rica" to the flower image
-      function addName() {
-        // Get the flower image element
-        var flower = document.getElementById("flower");
+		.petal:nth-child(4) {
+			transform-origin: left;
+		}
 
-        // Create a new span element for the name
-        var nameSpan = document.createElement("span");
-        nameSpan.innerHTML = "Rica";
-        nameSpan.classList.add("flower-name");
+		.center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			margin-top: -10px;
+			margin-left: -10px;
+			border-radius: 50%;
+			background-color: #ffff66; /* yellow */
+			animation-name: center-anim;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+			box-shadow: 2px 2px 5px #666666;
+		}
 
-        // Append the name to the flower image
-        flower.appendChild(nameSpan);
-      }
-    </script>
-  </head>
-  <body onload="moveFlower(); addName();">
-    <img class="flower" id="flower" src="https://www.flaticon.com/svg/static/icons/svg/3056/3056695.svg" alt="flower">
-  </body>
+		@keyframes petal-anim {
+			0% {
+				transform: rotate(0deg);
+			}
+			50% {
+				transform: rotate(180deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes center-anim {
+			0% {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(1.5);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="flower">
+		<div class="petal"></div>
+		<div class="petal"></div>
+		<div class="petal"></div>
+		<div class="petal"></div>
+		<div class="center"></div>
+	</div>
+</body>
 </html>

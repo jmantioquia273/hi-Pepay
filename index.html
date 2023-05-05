@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moving Flowers Animation</title>
+    <style>
+      /* Style for the flower image */
+      .flower {
+        position: relative;
+        width: 100%;
+        max-width: 200px;
+      }
+
+      /* Style for the name text */
+      .flower-name {
+        position: absolute;
+        font-size: 1.5em;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Media query for small screens */
+      @media only screen and (max-width: 600px) {
+        .flower {
+          width: 80%;
+          max-width: none;
+        }
+        .flower-name {
+          font-size: 1em;
+        }
+      }
+    </style>
+    <script>
+      // Function to move the flower animation
+      function moveFlower() {
+        // Get the flower image element
+        var flower = document.getElementById("flower");
+
+        // Set the initial position of the flower
+        var x = 0;
+        var y = 0;
+
+        // Move the flower across the screen
+        setInterval(function() {
+          // Update the position of the flower
+          x += 5;
+          y += 2;
+
+          // Set the new position of the flower
+          flower.style.left = x + "px";
+          flower.style.top = y + "px";
+        }, 50);
+      }
+
+      // Function to add the name "Rica" to the flower image
+      function addName() {
+        // Get the flower image element
+        var flower = document.getElementById("flower");
+
+        // Create a new span element for the name
+        var nameSpan = document.createElement("span");
+        nameSpan.innerHTML = "Rica";
+        nameSpan.classList.add("flower-name");
+
+        // Append the name to the flower image
+        flower.appendChild(nameSpan);
+      }
+    </script>
+  </head>
+  <body onload="moveFlower(); addName();">
+    <img class="flower" id="flower" src="https://www.flaticon.com/svg/static/icons/svg/3056/3056695.svg" alt="flower">
+  </body>
+</html>
